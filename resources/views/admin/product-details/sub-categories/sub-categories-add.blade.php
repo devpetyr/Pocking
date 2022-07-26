@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="mb-4">
                                         <label class="my-1 mr-2" for="country">Parent Category</label>
-                                        <select class="form-select" id="parent_category" name="parent_category">
+                                        <select class="form-select" id="parent_category" name="parent_category" required>
                                             <option selected hidden disabled>Select Parent Category</option>
                                             @foreach($parent_categories as $values)
                                                 <option value="{{$values->id}}">{{$values->title}}</option>

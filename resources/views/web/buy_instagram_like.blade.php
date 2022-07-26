@@ -1,5 +1,5 @@
 @extends('web.layouts.main')
-@section('content')  
+@section('content')
 
     <section class="insta_like_text">
       <div class="container">
@@ -10,7 +10,6 @@
                 <span>Buy Instagram Likes </span> with Instant Delivery in 2022
               </h2>
               <p>Select a package that you like and submit Order Now button</p>
-{{--              <a href="javascript:void(0)">★★★★★ (29 Reviews)</a>--}}
             </div>
           </div>
         </div>
@@ -20,722 +19,65 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            {{--  <div class="tab">
-              <button class="tablinks" onclick="openCity(event, 'London')">
-              Highy Quality Likes
-              </button>
-              <button class="tablinks" onclick="openCity(event, 'Paris')">
-              Active Likes
-              </button>
-            </div>  --}}
             <div id="London" class="tabcontent active">
               <section class="insta_like">
                 <div class="container">
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                       <div class="main_like">
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>50</span>
-                              <h5>50 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>0.89</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
+
+                          @foreach($product as $value)
+                              <div>
+                                  <div class="cart_like">
+                                      <div class="main_20 text-center">
+                                          <span>{{$value->likes}}</span>
+                                          <h5>{{$value->title}}</h5>
+                                      </div>
+                                      <div class="like_body">
+                                          <h5>${{$value->price}}</h5>
+                                      </div>
+                                      <div class="li_package">
+                                          <ul class="features text-center">
+                                              <li>
+                                                  <i class="fa fa-star text-icon"></i> High
+                                                  Quality
+                                              </li>
+                                              <li>
+                                                  <i class="fa fa-unlock text-icon"></i>
+                                                  <strong>No Password</strong> Needed
+                                              </li>
+                                              <li>
+                                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
+                                                  <strong>Protection</strong>
+                                              </li>
+                                              <li>
+                                                  <i class="fa-solid fa-shield-halved"></i>
+                                                  <strong>Safe</strong> and
+                                                  <strong>Easy</strong>
+                                              </li>
+                                              <li>
+                                                  <i class="fa fa-pie-chart text-icon"></i>
+                                                  <strong>Instant Delivery</strong> Guaranteed
+                                              </li>
+                                              <li>
+                                                  <i class="fa-solid fa-message"></i
+                                                  ><strong>24/7</strong> Support
+                                              </li>
+                                              <li class="text-success">
+                                                  <i class="fa-solid fa-check"></i> Secure
+                                                  Payments
+                                              </li>
+                                          </ul>
+                                          <div class="main_pkg">
+                                              <a class="package_a"><i class="fa-solid fa-cart-arrow-down"></i>
+                                                  <a class="package_2" href="{{route('buy_instagram_like',[$value->id])}}">Order now</a>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>100</span>
-                              <h5>100 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>0.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>300</span>
-                              <h5>300 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>2.59</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>500</span>
-                              <h5>500 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>4.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>1000</span>
-                              <h5>1000 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>6.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>2500</span>
-                              <h5>2500 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>11.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>5000</span>
-                              <h5>5000 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>19.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>10000</span>
-                              <h5>10k Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>29.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>20000</span>
-                              <h5>20000 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>59.899</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>20000</span>
-                              <h5>20000 Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>59.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>35000</span>
-                              <h5>35k Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>99.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>50000</span>
-                              <h5>50k Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>139.99</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="cart_like">
-                            <div class="main_20 text-center">
-                              <span>100000</span>
-                              <h5>100k Instagram Likes</h5>
-                              <a href="javascript:void(0)">★★★★★ 3 Reviews</a>
-                            </div>
-                            <div class="like_body">
-                              <sub>$</sub>
-                              <h5>27999</h5>
-                            </div>
-                            <div class="li_package">
-                              <ul class="features text-center">
-                                <li>
-                                  <i class="fa fa-star text-icon"></i> High
-                                  Quality
-                                </li>
-                                <li>
-                                  <i class="fa fa-unlock text-icon"></i>
-                                  <strong>No Password</strong> Needed
-                                </li>
-                                <li>
-                                  <i class="fa fa-thumbs-up text-icon"></i> Drop
-                                  <strong>Protection</strong>
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-shield-halved"></i>
-                                  <strong>Safe</strong> and
-                                  <strong>Easy</strong>
-                                </li>
-                                <li>
-                                  <i class="fa fa-pie-chart text-icon"></i>
-                                  <strong>Instant Delivery</strong> Guaranteed
-                                </li>
-                                <li>
-                                  <i class="fa-solid fa-message"></i
-                                    ><strong>24/7</strong> Support
-                                </li>
-                                <li class="text-success">
-                                  <i class="fa-solid fa-check"></i> Secure
-                                  Payments
-                                </li>
-                              </ul>
-                              <div class="main_pkg">
-                                <a class="package_a" href="javascript:void(0)"
-                                  ><i class="fa-solid fa-cart-arrow-down"></i
-                                  ></a>
-                                <a class="package_2" href="javascript:void(0)"
-                                  >Order now</a
-                                  >
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                          @endforeach
+
                       </div>
                     </div>
                   </div>
@@ -1574,7 +916,7 @@
                 When the new algorithm was first proposed, it was met with controversy and hostility, because marketers were already working under the conditions that the timing of each post was pivotal. The new algorithm would upend the whole marketing operation on Instagram, because now technology would decide who wees what based on the users own follows, and who they actually engage with. This was great for the individual user, but proved to be a difficult change for social media marketers. The marketers adapted to the new system, of course, but the algorithm is fairly organic and changes regularly, so marketers are forced to stay on their toes and adapt to regular changes. Overall the new algorithm seems to have had a positive impact on the platform, and the response from users seems fairly receptive.
               </p>
               <a href="#">
-              Advertisements on Instagram 
+              Advertisements on Instagram
               </a
                 >
               <p>
@@ -1899,7 +1241,7 @@
         </div>
       </div>
     </section>
- 
+
 @endsection
 @section('css')
 @endsection

@@ -29,8 +29,10 @@
                     <thead class="thead-light">
                     <tr>
                         <th class="border-0">#</th>
-                        <th class="border-0">Name</th>
-                        <th class="border-0">Image</th>
+                        <th class="border-0">Category</th>
+                        <th class="border-0">Title</th>
+                        <th class="border-0">Likes</th>
+                        <th class="border-0">Price</th>
                         <th class="border-0">Status</th>
                         <th class="border-0">Action</th>
                     </tr>
@@ -41,10 +43,10 @@
                     @foreach($products as $key=>$value)
                         <tr>
                             <td class="border-0"><a href="#" class="text-primary font-weight-bold">{{$key+1}}</a> </td>
+                            <td class="border-0 font-weight-bold">{{$value->get_subcategory->title}}</td>
                             <td class="border-0 font-weight-bold">{{$value->title}}</td>
-                            <td class="border-0">
-                                <img class="img-list" src="{{asset('uploads/products/'.$value->images_take1->title)}}" alt="{{$value->title}}">
-                            </td>
+                            <td class="border-0">{{$value->likes}}</td>
+                            <td class="border-0">${{$value->price}}</td>
                             <td class="border-0 font-weight-bold">
                                 <span class="{{$value->status == 1 ? 'text-success' : 'text-danger'}}">{{$value->status == 1 ? 'Active' : 'Inactive'}}</span>
                             </td>

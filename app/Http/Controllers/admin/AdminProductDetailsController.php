@@ -102,7 +102,7 @@ class AdminProductDetailsController extends Controller
     /**-------------------------------Product Functions------------------------------------*/
     function products_list()
     {
-        $products = ProductsModel::with('images_take1')->get();
+        $products = ProductsModel::with('get_subcategory')->orderby('id','ASC')->get();
         return view('admin.product-details.products.products-list',compact('products'));
     }
     function products_add()
@@ -128,47 +128,11 @@ class AdminProductDetailsController extends Controller
         (isset($products->id) and $products->id>0)?$create=0:$create=1;
         $products->sub_categories = $request->sub_categories;
         $products->title = $request->title;
-        $products->slug = $request->slug = Str::slug($request->title). '-' .  time() . '-' .  rand(100,900);
-        $products->description = $request->description;
+        $products->likes = $request->likes;
         $products->price = $request->price;
-        $products->stock = $request->stock;
-        $products->sku = 'product-'.rand(10000000,99999999);
-        $products->slug = $request->slug;
-        $products->is_discounted =  $request->is_discounted == null ? '0'  : '1';
-        if($products->is_discounted == 0 ){
-            $products->is_discounted = 0;
-            $products->discounted_percentage = 0;
-        }
-        else
-        {
-            $products->discounted_percentage = $request->discounted_percentage == null ? '0'  : $request->discounted_percentage;
-        }
-        $products->is_featured =  $request->is_featured == null ? '0'  : '1';
-        $products->discounted_price = $request->is_discounted == null ? '0'  : $request->price-($request->price*$request->discounted_percentage/100);
-
-        $products->has_variations = '0';
         $products->status = $request->status;
         $products->save();
-            /***saving multiple image file */
-            if($request->hasFile('images'))
-            {
-                /***for deleting old images*/
-                $getimage = ProductImageModel::where('product_id',$products->id)->get();
-                    foreach($getimage as $imageget){
-                        $imageget->delete();
-                    }
-                /***for uploading new images*/
-                foreach ($request->images as $image)
-                {
-                    $imageName = time().'.'.$image->getClientOriginalExtension();
-                    $image->move(public_path('/uploads/products'), $imageName);
-                    /** Store a new images for products */
-                    $storeImage = new ProductImageModel();
-                    $storeImage->title          = $imageName;
-                    $storeImage->product_id     = $products->id;
-                    $storeImage->save();
-                }
-            }
+
             if($create == 0)
             {
                 return back()->with('update','Updated Successfully');

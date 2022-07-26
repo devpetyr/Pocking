@@ -16,23 +16,27 @@ class AdminAuthController extends Controller
     {
         if(!empty($req->email)&&!empty($req->password)){
             $userfind=User::where('email',$req->email)->where('user_role',1)->first();
-            if($userfind){
-                /*means found user*/
-                if(Hash::check($req->password,$userfind->password)){
-                    /*matched password*/
-                    Auth::login($userfind);
-                    if(Auth::check()){
-                        return redirect(route('admin_dashboard'));
-                    }else{
-                        return redirect(route('admin_login'));
+            if($userfind->status === 1) {
+                if ($userfind) {
+                    /*means found user*/
+                    if (Hash::check($req->password, $userfind->password)) {
+                        /*matched password*/
+                        Auth::login($userfind);
+                        if (Auth::check()) {
+                            return redirect(route('admin_dashboard'));
+                        } else {
+                            return redirect(route('admin_login'));
+                        }
+                        /*matched password end*/
+                    } else {
+                        return redirect(route('admin_login'))->with('Failed_Password', 'Password is incorrect')->with('email', $req->email);
                     }
-                    /*matched password end*/
-                }else{
-                    return redirect(route('admin_login'))->with('Failed_Password','Password is incorrect')->with('email',$req->email);
+                    /*means found user end*/
+                } else {
+                    return redirect(route('admin_login'))->with('Failed_Email', 'Email not found');
                 }
-                /*means found user end*/
             }else{
-                return redirect(route('admin_login'))->with('Failed_Email','Email not found');
+                return redirect(route('admin_login'))->with('Failed_Email', 'User has been banned by admin');
             }
         }else{
             return redirect(route('admin_login'))->with('Failed_Empty','Please fill required fields');
@@ -66,7 +70,7 @@ class AdminAuthController extends Controller
 
     /**-----------------------------------Admin User Functions-------------------------------------------**/
     public function user_list(){
-        $user = User::orderBy('id','ASC')->get();
+        $user = User::where('user_role','2')->orderBy('id','ASC')->get();
         return view('admin.users.users-list',compact('user'));
     }
     function user_add()
@@ -92,7 +96,7 @@ class AdminAuthController extends Controller
         if($request->password){
             $user->password = Hash::make($request->password);
         }
-        $user->user_role = $request->user_role;
+//        $user->user_role = $request->user_role;
         $user->status = $request->status;
         $user->save();
         if($create == 0)

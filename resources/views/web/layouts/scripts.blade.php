@@ -51,3 +51,4 @@
   		toastr.warning("{{ session('warning') }}");
   @endif
 </script>
+@stack('js')

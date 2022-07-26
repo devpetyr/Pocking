@@ -7,6 +7,7 @@
     <link href="{{asset('web/css/bootstrap.css')}}" rel="stylesheet" />
     <link href="{{asset('web/css/custom.css')}}" rel="stylesheet" />
     <link href="{{asset('web/css/responsive.css')}}" rel="stylesheet" />
-    <link href="{{asset('web/css/toastr.min.css')}}" rel="stylesheet" /> 
+    <link href="{{asset('web/css/toastr.min.css')}}" rel="stylesheet" />
     <script src="{{asset('web/js/jquery-3.6.0.min.js')}}"></script>
 @yield('link')
+@stack('css')
