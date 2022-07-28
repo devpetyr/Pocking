@@ -42,6 +42,8 @@ Route::get('/login', [IndexController::class, 'login'])->name('login');
 Route::get('/privacy-policy', [IndexController::class, 'privacy'])->name('privacy');
 Route::get('/register', [IndexController::class, 'register'])->name('register');
 Route::get('/terms-and-conditions', [IndexController::class, 'term'])->name('term');
+
+
 // RegistrationController
 Route::post('/registration-submit', [RegistrationController::class, 'registration_submit'])->name('registration_submit');
 Route::get('confirm-email/{id}/{email}', [RegistrationController::class, 'confirm_email'])->name('confirm_email');
@@ -55,7 +57,14 @@ Route::post('validator', [RegistrationController::class, 'validator_check'])->na
     // User Auth Routes
     Route::post('/login-data', [LoginController::class, 'login_data'])->name('login_data');
     Route::get('/user-logout', [LoginController::class, 'user_logout'])->name('user_logout');
-    
+//User Auth Middleware Start
+Route::group(['middleware'=>['protectedUser']], function (){
+    Route::get('/my-profile', [IndexController::class, 'my_profile'])->name('my_profile');
+    Route::post('/update-profile', [LoginController::class, 'update_profile'])->name('update_profile');
+    Route::get('/order', [IndexController::class, 'user_order'])->name('user_order');
+});
+//User Auth Middleware End
+
 /**Admin Auth Middleware Starts */
 Route::group(['middleware'=>['protectedPage']], function(){
     /**Dashboard Routes */
