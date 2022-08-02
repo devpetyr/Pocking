@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\admin\AdminOrdersDetailsController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
@@ -9,6 +11,8 @@ use App\Http\Controllers\admin\AdminBlogsController;
 use App\Http\Controllers\admin\AdminTestimonialsController;
 use App\Http\Controllers\admin\AdminServicesController;
 use App\Http\Controllers\admin\AdminProductDetailsController;
+use \App\Http\Controllers\InstagramController;
+use \App\Http\Controllers\EmailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +66,14 @@ Route::group(['middleware'=>['protectedUser']], function (){
     Route::get('/my-profile', [IndexController::class, 'my_profile'])->name('my_profile');
     Route::post('/update-profile', [LoginController::class, 'update_profile'])->name('update_profile');
     Route::get('/order', [IndexController::class, 'user_order'])->name('user_order');
+    Route::get('/instagram-user/{id?}', [InstagramController::class, 'instagram_user'])->name('instagram_user');
+    Route::post('/instagram-user-details', [InstagramController::class, 'instagram_user_details'])->name('instagram_user_details');
+    Route::get('/user-profile-data/{id?}', [InstagramController::class, 'user_profile_data'])->name('user_profile_data');
+    Route::get('/check-out', [InstagramController::class, 'check_out'])->name('check_out');
+    Route::get('/invoice', [InstagramController::class, 'invoice'])->name('invoice');
+    Route::get('/send-mail-user/{id}', [EmailController::class, 'send_mail_user'])->name('send_mail_user');
+
+
 });
 //User Auth Middleware End
 
@@ -103,6 +115,12 @@ Route::group(['middleware'=>['protectedPage']], function(){
         Route::get('/admin/user-edit/{id?}', [AdminAuthController::class, 'user_edit'])->name('admin_users_edit');
         Route::get('/admin/user-delete/{user?}', [AdminAuthController::class, 'user_delete'])->name('admin_users_delete');
         Route::post('/admin/user-add-edit/{user?}', [AdminAuthController::class, 'user_add_edit_data'])->name('admin_users_add_edit');
+    /**Orders Routes */
+    Route::get('/admin/orders-list', [AdminOrdersDetailsController::class, 'orders_list'])->name('admin_orders');
+    Route::get('/admin/categories-add', [AdminOrdersDetailsController::class, 'categories_add'])->name('admin_categories_add');
+    Route::get('/admin/orders-edit/{id?}', [AdminOrdersDetailsController::class, 'orders_edit'])->name('admin_orders_edit');
+    Route::get('/admin/orders-details/{id?}', [AdminOrdersDetailsController::class, 'orders_details'])->name('admin_orders_details');
+    Route::post('/admin/orders-add-edit/{id?}', [AdminOrdersDetailsController::class, 'orders_add_edit'])->name('admin_orders_add_edit');
     /**Product Detail Routes*/
         /**Categories Routes */
             Route::get('/admin/categories-list', [AdminProductDetailsController::class, 'categories_list'])->name('admin_categories');

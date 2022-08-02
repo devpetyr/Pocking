@@ -66,7 +66,7 @@ function active($current_page){
 {{--            </a>--}}
 {{--        </li>--}}
           <li class="nav-item {{ active('orders-list') . active('orders-add') . active('orders-edit') }}">
-              <a href="#" class="nav-link">
+              <a href="{{ route('admin_orders') }}" class="nav-link">
                   <span class="sidebar-icon"><span class="fas fa-clipboard-check"></span></span>
                   <span>Orders</span>
               </a>

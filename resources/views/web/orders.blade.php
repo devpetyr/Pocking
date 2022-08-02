@@ -8,24 +8,32 @@
                       <table id="example" class="display" style="width:100%">
                           <thead>
                           <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
-                              <th>Age</th>
-                              <th>Start date</th>
-                              <th>Salary</th>
+                              <th>Instagram Image</th>
+                              <th>Instagram Email</th>
+                              <th>Instagram ID</th>
+                              <th>Total Like</th>
+                              <th>Total Price</th>
+                              <th>Invoice Number</th>
+
+
                           </tr>
                           </thead>
                           <tbody>
+{{--                          @dd($order)--}}
                           @if(count($order) >= 1)
-                              <tr>
-                                  <td>Tiger Nixon</td>
-                                  <td>System Architect</td>
-                                  <td>Edinburgh</td>
-                                  <td>61</td>
-                                  <td>2011-04-25</td>
-                                  <td>$320,800</td>
-                              </tr>
+                              @foreach($order as $item)
+                                  <tr>
+
+                                      <td> <img src="{{ $item->image }}" alt="{{ $item->image }}"></td>
+                                      <td>{{ $item->instagram_email }}</td>
+                                      <td>{{ $item->instagram_id }}</td>
+                                      <td>{{ $item->likes }}</td>
+                                      <td>${{ $item->price }}</td>
+                                      <td>{{ $item->invoice_number }}</td>
+
+
+                                  </tr>
+                              @endforeach
                           @else
                               <tr>
                                   <td></td>
@@ -39,12 +47,12 @@
                           </tbody>
                           <tfoot>
                           <tr>
-                              <th>Name</th>
-                              <th>Position</th>
-                              <th>Office</th>
-                              <th>Age</th>
-                              <th>Start date</th>
-                              <th>Salary</th>
+                              <th>Instagram Image</th>
+                              <th>Instagram Email</th>
+                              <th>Instagram ID</th>
+                              <th>Total Like</th>
+                              <th>Total Price</th>
+                              <th>Invoice Number</th>
                           </tr>
                           </tfoot>
                       </table>
