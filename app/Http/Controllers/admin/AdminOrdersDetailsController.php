@@ -42,11 +42,12 @@ class AdminOrdersDetailsController extends Controller
         $id->save();
         return back()->with('update','Updated Successfully');
     }
-    function orders_details(ordersModel $id)
+    function orders_details($id)
     {
-//        dd($id);
-        $user=User::where('id',$id->user_id)->first();
-        return view('admin.orders-details.orders.orders-details',compact('id' ,'user'));
+        $order=OrdersModel::where('id',$id)->with('get_product','get_user')->first();
+//        dd($order);
+//        $user=User::where('id',$id->user_id)->first();
+        return view('admin.orders-details.orders.orders-details',compact('order'));
     }
 
 

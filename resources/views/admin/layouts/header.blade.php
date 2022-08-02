@@ -7,16 +7,16 @@ function active($current_page){
 }
 @endphp
 
-<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">
-    <a class="navbar-brand mr-lg-5" href="#">
-        <img class="navbar-brand-dark" src="{{asset('admin/assets/img/brand/light.svg')}}" alt="Volt logo" /> <img class="navbar-brand-light" src="{{asset('admin/assets/img/brand/dark.svg')}}" alt="Volt logo" />
-    </a>
-    <div class="d-flex align-items-center">
-        <button class="navbar-toggler d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
+{{--<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-md-none">--}}
+{{--    <a class="navbar-brand mr-lg-5" href="#">--}}
+{{--        <img class="navbar-brand-dark" src="{{asset('admin/assets/img/brand/light.svg')}}" alt="Volt logo" /> <img class="navbar-brand-light" src="{{asset('admin/assets/img/brand/dark.svg')}}" alt="Volt logo" />--}}
+{{--    </a>--}}
+{{--    <div class="d-flex align-items-center">--}}
+{{--        <button class="navbar-toggler d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">--}}
+{{--          <span class="navbar-toggler-icon"></span>--}}
+{{--        </button>--}}
+{{--    </div>--}}
+{{--</nav>--}}
 
         <div class="container-fluid bg-soft">
             <div class="row">
@@ -27,7 +27,7 @@ function active($current_page){
       <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
         <div class="d-flex align-items-center">
           <div class="user-avatar lg-avatar mr-4">
-            <img src="{{asset('admin/assets/img/team/profile-picture-3.jpg')}}" class="card-img-top rounded-circle border-white" alt="Bonnie Green">
+{{--            <img src="{{asset('admin/assets/img/team/profile-picture-3.jpg')}}" class="card-img-top rounded-circle border-white" alt="Bonnie Green">--}}
           </div>
           <div class="d-block">
             <h2 class="h6">Hi, Jane</h2>
@@ -116,10 +116,10 @@ function active($current_page){
 </div>
 <!-- Navbar links -->
 <ul class="navbar-nav align-items-center">
-<li class="nav-item dropdown">
-<a class="nav-link text-dark mr-lg-3 icon-notifications" data-unread-notifications="true" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+{{--<li class="nav-item dropdown">--}}
+{{--<a class="nav-link text-dark mr-lg-3 icon-notifications" data-unread-notifications="true" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
 <span class="icon icon-sm">
-<span class="fas fa-bell bell-shake"></span>
+{{--<span class="fas fa-bell bell-shake"></span>--}}
 <span class="icon-badge rounded-circle unread-notifications"></span>
 </span>
 </a>
@@ -149,7 +149,7 @@ function active($current_page){
 <div class="row align-items-center">
   <div class="col-auto">
     <!-- Avatar -->
-    <img alt="Image placeholder" src="{{asset('admin/assets/img/team/profile-picture-2.jpg')}}" class="user-avatar lg-avatar rounded-circle">
+{{--    <img alt="Image placeholder" src="{{asset('admin/assets/img/team/profile-picture-2.jpg')}}" class="user-avatar lg-avatar rounded-circle">--}}
   </div>
   <div class="col pl-0 ml--2">
     <div class="d-flex justify-content-between align-items-center">
@@ -206,7 +206,7 @@ function active($current_page){
 <div class="row align-items-center">
   <div class="col-auto">
     <!-- Avatar -->
-    <img alt="Image placeholder" src="{{asset('admin/assets/img/team/profile-picture-5.jpg')}}" class="user-avatar lg-avatar rounded-circle">
+{{--    <img alt="Image placeholder" src="{{asset('admin/assets/img/team/profile-picture-5.jpg')}}" class="user-avatar lg-avatar rounded-circle">--}}
   </div>
   <div class="col pl-0 ml--2">
     <div class="d-flex justify-content-between align-items-center">
@@ -226,11 +226,11 @@ function active($current_page){
 </div>
 </li>
 <li class="nav-item dropdown">
-<a class="nav-link pt-1 px-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+{{--<a class="nav-link pt-1 px-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
 <div class="media d-flex align-items-center">
-<img class="user-avatar md-avatar rounded-circle" alt="Image placeholder" src="{{asset('admin/assets/img/team/profile-picture-3.jpg')}}">
+{{--<img class="user-avatar md-avatar rounded-circle" alt="Image placeholder" src="{{asset('admin/assets/img/team/profile-picture-3.jpg')}}">--}}
 <div class="media-body ml-2 text-dark align-items-center d-none d-lg-block">
-<span class="mb-0 font-small font-weight-bold">Bonnie Green</span>
+{{--<span class="mb-0 font-small font-weight-bold">Bonnie Green</span>--}}
 </div>
 </div>
 </a>

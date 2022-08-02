@@ -7,8 +7,9 @@
             <div class="main_login">
               <div class="row">
 
-                <div class="col-md-7 col-sm-7 col-xs-12" >
-                    <div class="login_fild">
+                <div class="col-md-12 col-sm-12 col-xs-12" >
+                    <div class="shadow_bg">
+                    <div class="login_fild detail_invoice">
                         <h3>Order Details</h3>
                         <div class="container">
 
@@ -32,7 +33,7 @@
                             <a href="{{ route('check_out') }}">Pay Now</a>
                         </div>
                     </div>
-
+                    </div>
                 </div>
 
 

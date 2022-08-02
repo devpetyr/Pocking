@@ -6,13 +6,51 @@ use App\Models\BannerModel;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\OrdersModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class AdminBannerController extends Controller
 {
     function dashboard()
     {
-        return view('admin.dashboard');
+        $yearlyMemberships = OrdersModel::select(
+            DB::raw("year(created_at) as year"),
+            DB::raw("month(created_at) as month"),
+            DB::raw("SUM(price) as price"),
+            DB::raw("COUNT(price) as count_sale"))
+            ->orderBy(DB::raw("YEAR(created_at)"))
+            ->groupBy(DB::raw("YEAR(created_at)"),DB::raw("MONTH(created_at)"))
+            ->get();
+//        $monthly_sales;
+        $now = Carbon::now();
+        foreach ($yearlyMemberships as $key => $value) {
+            if($value->year == $now->year)
+            {
+                $monthly_sales[$key] = [$value->year, $value->month, (int)$value->price, (int)$value->count_sale];
+            }
+        }
+        for($a = 1; $a <= 12; $a++)
+        {
+            $haveVal = false;
+            foreach($monthly_sales as $val)
+            {
+                if($a == $val[1])
+                {
+                    $haveVal = true;
+                    $monthly_sale[$a] = $val[2];
+                    break;
+                }
+            }
+            if(!$haveVal)
+            {
+                $monthly_sale[$a] = 0;
+            }
+        }
+        $data['monthly_sale'] = $monthly_sale;
+        return view('admin.dashboard', $data);
+//        return view('admin.dashboard');
     }
 
 /**Banner functions starts*/

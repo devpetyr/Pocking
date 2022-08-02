@@ -8,7 +8,8 @@
               <div class="row">
 
                 <div class="col-md-7 col-sm-7 col-xs-12" >
-                  <div class="login_fild">
+                    <div class="shadow_bg">
+                  <div class="login_fild user_fild">
                     <form action="{{route('instagram_user_details')}}" method="post">
                       @csrf
                       <h3>Instagram Details</h3>
@@ -24,6 +25,7 @@
                     </form>
 
                   </div>
+                    </div>
                 </div>
                 <div class="col-md-5 col-sm-5 col-xs-12">
 {{--                    @dd($product)--}}

@@ -8,16 +8,22 @@
               <div class="row">
 
                 <div class="col-md-7 col-sm-7 col-xs-12" >
-                  <div class="login_fild">
-                      <h3>Instagram Profile</h3>
-                      <br>
-                   <div class="row">
-                       <a href="{{ route('user_profile_data',[1]) }}"><img src="{{ asset('web/images/users-1.jpg') }}"></a>
-                       <a href="{{ route('invoice') }}">CheckOut</a>
-                   </div>
+                 <div class="shadow_bg">
+                     <div class="login_fild user_fild">
+                         <h3>Instagram Profile</h3>
+                         <br>
+                         <div class="row">
+                             <div class="row">
+                                 <div class="col-md-12">
+                                     <img class="top_head" src="{{ asset('web/images/users-1.jpg') }}">
+                                 </div>
+                             </div>
+                             <a class="top_head" href="{{ route('invoice') }}">CheckOut</a>
+                         </div>
 
 
-                  </div>
+                     </div>
+                 </div>
                 </div>
                 <div class="col-md-5 col-sm-5 col-xs-12">
 {{--                    @dd($product)--}}

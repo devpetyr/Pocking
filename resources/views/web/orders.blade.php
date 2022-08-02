@@ -24,7 +24,7 @@
                               @foreach($order as $item)
                                   <tr>
 
-                                      <td> <img src="{{ $item->image }}" alt="{{ $item->image }}"></td>
+                                      <td> <img src="{{asset('web/images/'.$item->image)}}" alt="{{$item->image}}" alt="{{ $item->image }}" width="70px"></td>
                                       <td>{{ $item->instagram_email }}</td>
                                       <td>{{ $item->instagram_id }}</td>
                                       <td>{{ $item->likes }}</td>

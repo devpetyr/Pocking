@@ -2167,3 +2167,40 @@ a.logout_btn {
     font-size: 50px;
     margin: 0 0 20px;
 }
+
+.login_fild.user_fild {
+    box-shadow: 1px 2px 9px 0px #f06331;
+    border: 1px solid #ff8615;
+}
+.button_hiden a {
+    background: transparent;
+    border: none;
+}
+.button_hiden a:hover{
+    background: transparent;
+    border: none;
+}
+a.top_head {
+    margin: 20px auto 0;
+}
+img.top_head {
+    margin: 0 auto;
+    display: table;
+}
+.auto_wid {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2% 0;
+}
+
+.login_fild.detail_invoice a {
+    float: right;
+}
+.shadow_bg {
+    padding: 21px;
+    box-shadow: 0px 3px 20px #e5e5e5;
+}
+.login_fild.detail_invoice {
+    box-shadow: 1px 2px 9px 0px #f06331;
+    border: 1px solid #ff8615;
+}
