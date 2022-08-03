@@ -1,8 +1,11 @@
 <?php
 namespace App\Http\Controllers;
+use App\Models\OrdersModel;
 use App\Models\ProductsModel;
 use Illuminate\Http\Request;
 use App\Models\BannerModel;
+use Illuminate\Support\Facades\Auth;
+
 class IndexController extends Controller
 {
     /**
@@ -74,5 +77,14 @@ class IndexController extends Controller
     public function term()
     {
         return view("web.term")->with("title","Terms And Conditions");
+    }
+    public function my_profile()
+    {
+        return view('web.my_profile');
+    }
+    public function user_order()
+    {
+        $order=OrdersModel::where('user_id',Auth::user()->id)->get();
+        return view('web.orders',compact('order'));
     }
 }

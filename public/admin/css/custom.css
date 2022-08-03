@@ -12,3 +12,17 @@
     border-radius: 8px;
     height: 30px;
 }
+ul.none_list li {
+    list-style: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+    margin: 10px 0 0;
+}
+
+h1.heading_chat {
+    font-size: 25px;
+    font-weight: 700;
+}
+

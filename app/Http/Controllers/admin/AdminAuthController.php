@@ -12,35 +12,30 @@ class AdminAuthController extends Controller
     public function login(){
         return view('admin.index');
     }
-    public function login_data(Request $req)
+    public function login_data(Request $request)
     {
-        if(!empty($req->email)&&!empty($req->password)){
-            $userfind=User::where('email',$req->email)->where('user_role',1)->first();
-            if($userfind->status === 1) {
-                if ($userfind) {
-                    /*means found user*/
-                    if (Hash::check($req->password, $userfind->password)) {
-                        /*matched password*/
-                        Auth::login($userfind);
-                        if (Auth::check()) {
-                            return redirect(route('admin_dashboard'));
-                        } else {
-                            return redirect(route('admin_login'));
-                        }
-                        /*matched password end*/
-                    } else {
-                        return redirect(route('admin_login'))->with('Failed_Password', 'Password is incorrect')->with('email', $req->email);
-                    }
-                    /*means found user end*/
-                } else {
-                    return redirect(route('admin_login'))->with('Failed_Email', 'Email not found');
-                }
-            }else{
-                return redirect(route('admin_login'))->with('Failed_Email', 'User has been banned by admin');
+        $request->validate(array(
+            'email' => 'required|email',
+            'password' => 'required',
+        ));
+        $emails = User::where('email', $request->email)->where('user_role', 1)->first();
+        if ($emails) {
+            if (Hash::check($request->password,$emails->password))
+            {
+                Auth::login($emails);
+                return redirect(route('admin_dashboard'));
             }
-        }else{
-            return redirect(route('admin_login'))->with('Failed_Empty','Please fill required fields');
+            else
+            {
+                session()->flash('passerror');
+                return back();
+            }
         }
+        else {
+            session()->flash('emailerror');
+            return back();
+        }
+
     }
     public function logout()
     {

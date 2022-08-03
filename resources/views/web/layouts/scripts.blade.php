@@ -6,6 +6,15 @@
     <script src="{{asset('web/js/bootstrap.js')}}"></script>
     <script src="{{asset('web/js/custom.js')}}"></script>
     <script src="{{asset('web/js/toastr.min.js')}}"></script>
+{{--Datatable --}}
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+
 <script>
   @if(Session::has('message'))
   toastr.options =
@@ -50,5 +59,7 @@
   }
   		toastr.warning("{{ session('warning') }}");
   @endif
+
 </script>
+
 @stack('js')

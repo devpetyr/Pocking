@@ -23,11 +23,21 @@
                   <a href="{{route('buy_instagram_like')}}">Buy Instagram Likes</a>
                 </li>
                 @if (Auth::check() && Auth::user()->user_role == 2)
-                <li class="getquote"><a href="{{route('user_logout')}}">Logout</a></li>
+{{--                <li class="getquote"><a href="{{route('user_logout')}}">Logout</a></li>--}}
+                    <li class="getquote">
+                        <div class="dropdown">
+                            <button class="dropbtn user_btn">{{ Auth::user()->username }}<i class="fa fa-caret-down"></i></button>
+                            <div class="dropdown-content">
+                                <a href="{{ route('my_profile') }}">My Profile</a>
+                                <a href="{{ route('user_order') }}">My Order</a>
+                                <a class="logout_btn" href="{{route('user_logout')}}">Logout</a>
+                            </div>
+                        </div>
+                    </li>
                 @else
                 <li class="getquote"><a href="{{route('login')}}">Log In</a></li>
                 @endif
-                
+
               </ul>
             </div>
           </div>

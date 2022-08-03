@@ -70,7 +70,7 @@
                                           </ul>
                                           <div class="main_pkg">
                                               <a class="package_a"><i class="fa-solid fa-cart-arrow-down"></i>
-                                                  <a class="package_2" href="{{route('buy_instagram_like',[$value->id])}}">Order now</a>
+                                                  <a class="package_2" href="{{route('instagram_user',[$value->id])}}">Order now</a>
                                               </a>
                                           </div>
                                       </div>

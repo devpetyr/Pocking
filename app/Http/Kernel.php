@@ -47,6 +47,9 @@ class Kernel extends HttpKernel
         'protectedPage'=>[
             \App\Http\Middleware\SessionMiddleware::class,
         ],
+        'protectedUser'=>[
+            \App\Http\Middleware\UserAuth::class,
+        ],
     ];
 
     /**

@@ -30,7 +30,7 @@
                         >Forgot Password?</a
                       >
                     </form>
-                    
+
                   </div>
                 </div>
                 <div class="col-md-5 col-sm-5 col-xs-12">
@@ -43,12 +43,13 @@
                     <a href="{{route('register')}}">Register</a>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>  
+    </section>
 @endsection
 @section('css')
 @endsection
