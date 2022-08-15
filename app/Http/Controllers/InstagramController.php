@@ -8,6 +8,17 @@ use Illuminate\Http\Request;
 
 class InstagramController extends Controller
 {
+    public function instagram_login()
+    {
+        $appId = env('INSTAGRAM_CLIENT_ID');
+        $redirectUri = env('INSTAGRAM_REDIRECT_URI');
+//        $redirectUri = route('instagram_login_thankyou');
+        return redirect()->to("https://api.instagram.com/oauth/authorize?app_id={$appId}&redirect_uri={$redirectUri}&scope=user_profile,user_media&response_type=code");
+    }
+    public function instagram_login_thankyou(Request $request)
+    {
+        dd($request);
+    }
     public function instagram_user($id)
     {
         $product=ProductsModel::where('id',$id)->first();

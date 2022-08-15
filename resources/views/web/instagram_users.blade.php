@@ -10,19 +10,25 @@
                 <div class="col-md-7 col-sm-7 col-xs-12" >
                     <div class="shadow_bg">
                   <div class="login_fild user_fild">
-                    <form action="{{route('instagram_user_details')}}" method="post">
-                      @csrf
-                      <h3>Instagram Details</h3>
-                      <input type="email" placeholder="Instagram Email" name="instagram_email" /><br>
-                        <span style="color: red">@error('instagram_email'){{$message}}@enderror</span>
-                        <input type="text" placeholder="Instagram ID"  name="Instagram_id"/><br>
-                        <span style="color: red">@error('Instagram_id'){{$message}}@enderror</span>
-                        @if (session('oldPasswordNotFound'))
-                            <span style="color: crimson">Password Not Match</span>
-                        @endif
 
-                      <button type="submit">Save</button>
-                    </form>
+
+                      <h3>Instagram Details</h3>
+                      <p class="text-center">Kindly connect your instagram account</p>
+                      <a href="{{route('my_profile')}}">Connect</a>
+
+{{--                    <form action="{{route('instagram_user_details')}}" method="post">--}}
+{{--                      @csrf--}}
+{{--                      --}}
+{{--                      <input type="email" placeholder="Instagram Email" name="instagram_email" /><br>--}}
+{{--                        <span style="color: red">@error('instagram_email'){{$message}}@enderror</span>--}}
+{{--                        <input type="text" placeholder="Instagram ID"  name="Instagram_id"/><br>--}}
+{{--                        <span style="color: red">@error('Instagram_id'){{$message}}@enderror</span>--}}
+{{--                        @if (session('oldPasswordNotFound'))--}}
+{{--                            <span style="color: crimson">Password Not Match</span>--}}
+{{--                        @endif--}}
+
+{{--                      <button type="submit">Save</button>--}}
+{{--                    </form>--}}
 
                   </div>
                     </div>
