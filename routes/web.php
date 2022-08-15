@@ -73,7 +73,9 @@ Route::group(['middleware'=>['protectedUser']], function (){
     Route::get('/invoice', [InstagramController::class, 'invoice'])->name('invoice');
     Route::get('/send-mail-user/{id}', [EmailController::class, 'send_mail_user'])->name('send_mail_user');
 
-
+    //for instagram login
+    Route::get('/instagram-connect-account', [InstagramController::class, 'instagram_login'])->name('instagram_login');
+    Route::get('/thank-you', [InstagramController::class, 'instagram_login_thankyou'])->name('instagram_login_thankyou');
 });
 //User Auth Middleware End
 
